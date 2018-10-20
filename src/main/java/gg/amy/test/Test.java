@@ -20,7 +20,6 @@ public final class Test {
     public static void main(final String[] args) {
         final Catnip catnip = Catnip.catnip(
                 new CatnipOptions(System.getenv("TOKEN"))
-                        .shardManager(new DefaultShardManager(1))
         );
         
         catnip.on(DiscordEvent.MESSAGE_CREATE, msg -> {
