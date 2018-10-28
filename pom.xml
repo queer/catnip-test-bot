@@ -9,7 +9,7 @@
     <version>0.1.0</version>
 
     <properties>
-        <catnip.version>89c7ead</catnip.version>
+        <catnip.version>2b048a5</catnip.version>
         <logback.version>1.2.3</logback.version>
     </properties>
 
