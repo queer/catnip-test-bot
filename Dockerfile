@@ -4,7 +4,7 @@ COPY . /app
 WORKDIR /app
 RUN mvn -B -q clean package
 
-FROM openjdk:10-jre-slim
+FROM openjdk:10-jdk-slim
 COPY --from=0 /app/target/catnip*.jar /app/catnip.jar
 
 ENTRYPOINT ["/usr/bin/java", "-Xms128M", "-Xmx3072M", "-jar", "/app/catnip.jar"]
