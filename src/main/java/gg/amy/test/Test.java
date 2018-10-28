@@ -1,11 +1,15 @@
 package gg.amy.test;
 
+import com.google.common.collect.ImmutableSet;
 import com.mewna.catnip.Catnip;
 import com.mewna.catnip.CatnipOptions;
+import com.mewna.catnip.cache.CacheFlag;
 import com.mewna.catnip.shard.DiscordEvent;
+import com.mewna.catnip.shard.DiscordEvent.Raw;
 import com.mewna.catnip.shard.manager.DefaultShardManager;
 
 import java.text.NumberFormat;
+import java.util.EnumSet;
 
 /**
  * @author amy
@@ -20,6 +24,12 @@ public final class Test {
     public static void main(final String[] args) {
         final Catnip catnip = Catnip.catnip(
                 new CatnipOptions(System.getenv("TOKEN"))
+                .cacheFlags(EnumSet.of(CacheFlag.DROP_EMOJI, CacheFlag.DROP_GAME_STATUSES))
+                .disabledEvents(ImmutableSet.of(
+                        Raw.GUILD_EMOJIS_UPDATE,
+                        Raw.GUILD_INTEGRATIONS_UPDATE,
+                        Raw.TYPING_START
+                ))
         );
         
         catnip.on(DiscordEvent.MESSAGE_CREATE, msg -> {
