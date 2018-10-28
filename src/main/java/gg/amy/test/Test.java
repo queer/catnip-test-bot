@@ -6,6 +6,7 @@ import com.mewna.catnip.CatnipOptions;
 import com.mewna.catnip.cache.CacheFlag;
 import com.mewna.catnip.shard.DiscordEvent;
 import com.mewna.catnip.shard.DiscordEvent.Raw;
+import com.mewna.catnip.shard.manager.DefaultShardManager;
 
 import java.text.NumberFormat;
 import java.util.EnumSet;
@@ -50,6 +51,7 @@ public final class Test {
                                 Raw.READY,
                                 Raw.TYPING_START
                         ))
+                        .shardManager(new DefaultShardManager(15))
         );
         
         catnip.on(DiscordEvent.MESSAGE_CREATE, msg -> {
