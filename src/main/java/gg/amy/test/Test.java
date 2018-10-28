@@ -24,6 +24,7 @@ public final class Test {
     public static void main(final String[] args) {
         final Catnip catnip = Catnip.catnip(
                 new CatnipOptions(System.getenv("TOKEN"))
+                        /*
                         .cacheFlags(EnumSet.of(CacheFlag.DROP_EMOJI, CacheFlag.DROP_GAME_STATUSES))
                         .disabledEvents(ImmutableSet.of(
                                 Raw.CHANNEL_CREATE,
@@ -51,6 +52,7 @@ public final class Test {
                                 Raw.READY,
                                 Raw.TYPING_START
                         ))
+                        */
         );
         
         catnip.on(DiscordEvent.MESSAGE_CREATE, msg -> {
