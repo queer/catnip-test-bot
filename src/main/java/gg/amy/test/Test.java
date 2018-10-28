@@ -25,9 +25,29 @@ public final class Test {
                 new CatnipOptions(System.getenv("TOKEN"))
                         .cacheFlags(EnumSet.of(CacheFlag.DROP_EMOJI, CacheFlag.DROP_GAME_STATUSES))
                         .disabledEvents(ImmutableSet.of(
-                                Raw.GUILD_EMOJIS_UPDATE,
-                                Raw.GUILD_INTEGRATIONS_UPDATE,
+                                Raw.CHANNEL_CREATE,
+                                Raw.CHANNEL_DELETE,
+                                Raw.CHANNEL_UPDATE,
                                 Raw.CHANNEL_PINS_UPDATE,
+                                Raw.GUILD_CREATE,
+                                Raw.GUILD_AVAILABLE,
+                                Raw.GUILD_DELETE,
+                                Raw.GUILD_UNAVAILABLE,
+                                Raw.GUILD_UPDATE,
+                                Raw.GUILD_EMOJIS_UPDATE,
+                                Raw.GUILD_MEMBER_UPDATE,
+                                Raw.GUILD_MEMBERS_CHUNK,
+                                Raw.GUILD_ROLE_CREATE,
+                                Raw.GUILD_ROLE_DELETE,
+                                Raw.GUILD_ROLE_UPDATE,
+                                Raw.GUILD_INTEGRATIONS_UPDATE,
+                                Raw.USER_UPDATE,
+                                Raw.MESSAGE_DELETE,
+                                Raw.MESSAGE_DELETE_BULK,
+                                Raw.MESSAGE_UPDATE,
+                                Raw.MESSAGE_EMBEDS_UPDATE,
+                                Raw.PRESENCE_UPDATE,
+                                Raw.READY,
                                 Raw.TYPING_START
                         ))
         );
