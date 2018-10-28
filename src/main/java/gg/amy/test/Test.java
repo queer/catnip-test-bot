@@ -60,11 +60,11 @@ public final class Test {
                     final String cmd = msg.content().replaceFirst("catnip", "").trim();
                     switch(cmd) {
                         case "stats": {
-                            final var format = NumberFormat.getInstance();
-                            final var maxMemory = Runtime.getRuntime().maxMemory();
-                            final var totalMemory = Runtime.getRuntime().totalMemory();
-                            final var freeMemory = Runtime.getRuntime().freeMemory();
-                            final var usedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+                            final NumberFormat format = NumberFormat.getInstance();
+                            final long maxMemory = Runtime.getRuntime().maxMemory();
+                            final long totalMemory = Runtime.getRuntime().totalMemory();
+                            final long freeMemory = Runtime.getRuntime().freeMemory();
+                            final long usedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
                             
                             catnip.rest().channel().sendMessage(msg.channelId(),
                                     "```\n" +
