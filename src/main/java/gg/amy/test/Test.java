@@ -51,7 +51,6 @@ public final class Test {
                                 Raw.READY,
                                 Raw.TYPING_START
                         ))
-                        .shardManager(new DefaultShardManager(15))
         );
         
         catnip.on(DiscordEvent.MESSAGE_CREATE, msg -> {
